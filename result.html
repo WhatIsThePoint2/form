@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="res/Logo.png" type="image/icon type">
+    <link rel="stylesheet" href="css/res.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat</title>
+</head>
+<body>
+     <img src="res/imp.png" alt="imp"><h1 id="mssg"></h1><br>
+     <div>S'il vous plaît, ne paniquez pas, cela ne fera qu'empirer la situation, soyez calme et suivez les instructions qui vous sont données.
+          Voici également une vidéo qui pourrait vous aider. Restez en sécurité et prenez les précautions nécessaires.</div>
+          <iframe width="800" height="400"
+          src="https://www.youtube.com//embed/oN-PvqU9Lhk">
+          </iframe> 
+    <script src="js/script.js"></script>
+    <script>
+    lw=window.localStorage
+    var r = lw.getItem("score");
+    var s = lw.getItem("age")
+    var o = lw.getItem("mc")
+    if ((parseInt(r)>=0) && (parseInt(r) <=7) && (parseInt(s)<65)){
+         mssg="Vous devirez aller bien, mais faites attention à vous, et n’oubliez pas de respecter les gestes barrières.";
+    }
+    if ((parseInt(r)>=0) && (parseInt(r) <=7) && (parseInt(s)<65)){
+         mssg ="Vous devirez aller bien, mais vous devriez rester confiné chez vous.";
+    }
+    if ((parseInt(r)>=8) && (parseInt(r) <=18) && (parseInt(o)==0)){
+         mssg="Vous avez des majeurs symptômes du COVID-19.Vous devriez vous confiner au plus vite, et faire un test de dépistage."
+    }
+    if((parseInt(r)>=8) && (parseInt(r) <=18) && (parseInt(o)>0)){
+         mssg="Précipitez-vous au centre COVID le plus proche pour être pris encharge.";
+    }
+    if(parseInt(r)>18){
+         mssg="Précipitez-vous au centre COVID le plus proche pour être pris encharge.";
+    }
+    document.getElementById("mssg").innerText = mssg;
+    
+    </script>
+</body>
+</html>
